@@ -32,7 +32,7 @@ public class RequestManager {
     public void getCuratedWallpapers(CuratedResponseListener listener,String page)
     {
         CallWallpaperList callWallpaperList = retrofit.create(CallWallpaperList.class);
-        Call<CuratedApiResponse> call = callWallpaperList.getWallpapers(page,"20");
+        Call<CuratedApiResponse> call = callWallpaperList.getWallpapers(page,"200");
         call.enqueue(new Callback<CuratedApiResponse>() {
             @Override
             public void onResponse(Call<CuratedApiResponse> call, Response<CuratedApiResponse> response) {
@@ -53,7 +53,7 @@ public class RequestManager {
     public void SearchCuratedWallpapers(SearchResponseListner listener, String page, String query)
     {
         CallWallpaperListSearch callWallpaperListSearch = retrofit.create(CallWallpaperListSearch.class);
-        Call<SearchApiResponse> call = callWallpaperListSearch.searchWallpapers(query,page,"20");
+        Call<SearchApiResponse> call = callWallpaperListSearch.searchWallpapers(query,page,"200");
         call.enqueue(new Callback<SearchApiResponse>() {
             @Override
             public void onResponse(Call<SearchApiResponse> call, Response<SearchApiResponse> response) {
